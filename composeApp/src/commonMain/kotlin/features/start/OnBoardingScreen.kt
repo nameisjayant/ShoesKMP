@@ -25,6 +25,8 @@ import components.AppButtonComponent
 import components.AppImageComponent
 import features.start.domain.model.OnboardingModel
 import features.start.domain.model.onboardList
+import moe.tlaster.precompose.navigation.Navigator
+import utils.ScreenRoutes
 import utils.backgroundColor
 import utils.lightBlue2Color
 import utils.lightBlueColor
@@ -33,7 +35,9 @@ import utils.lightTextColor
 
 
 @Composable
-fun OnBoardingScreen() {
+fun OnBoardingScreen(
+    navigator: Navigator
+) {
 
     Box(
         modifier = Modifier.background(backgroundColor).fillMaxSize().padding(20.dp)
@@ -66,7 +70,9 @@ fun OnBoardingScreen() {
                 Box(modifier = Modifier.weight(1f))
                 AppButtonComponent(
                     title = "Get Started"
-                ) {}
+                ) {
+                    navigator.navigate(ScreenRoutes.Register.route)
+                }
             }
         }
 

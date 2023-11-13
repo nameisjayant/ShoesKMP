@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.windowInsetsTopHeight
@@ -34,12 +35,18 @@ import components.AppTextFieldComponent
 import components.HeaderComponent
 import features.components.BottomContent
 import features.components.TitleSubTitleComponent
+import moe.tlaster.precompose.navigation.NavOptions
+import moe.tlaster.precompose.navigation.Navigator
+import moe.tlaster.precompose.navigation.PopUpTo
+import utils.ScreenRoutes
 import utils.backgroundColor
 import utils.lightSubTextColor
 
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    navigator: Navigator
+) {
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
@@ -56,7 +63,9 @@ fun LoginScreen() {
             Column(
                 modifier = Modifier.weight(1f).verticalScroll(scrollState)
             ) {
-                HeaderComponent()
+                HeaderComponent(onBack = {
+                    navigator.goBack()
+                })
                 Spacer(modifier = Modifier.height(32.dp))
                 TitleSubTitleComponent(
                     title = "Hello Again!", subTitle = "Welcome Back You’ve Been Missed!"
@@ -100,7 +109,11 @@ fun LoginScreen() {
                         color = lightSubTextColor,
                         fontSize = 13.sp,
                         fontWeight = FontWeight.W400
-                    ), onClick = {})
+                    ), onClick = {
+                        navigator.navigate(
+                            ScreenRoutes.Register.ForgetPassword.route
+                        )
+                    })
                 }
                 Spacer(modifier = Modifier.height(30.dp))
                 AppButtonComponent(title = "Sign In", modifier = Modifier.fillMaxWidth()) {}
@@ -108,9 +121,17 @@ fun LoginScreen() {
             BottomContent(
                 text1 = "Don’t have an account?",
                 text2 = "Sign Up for free",
-                modifier = Modifier.padding(vertical = 20.dp)
-            ) {}
-            Spacer(modifier = Modifier.windowInsetsTopHeight(WindowInsets.statusBars))
+                modifier = Modifier.padding(vertical = 30.dp)
+            ) {
+                navigator.navigate(
+                    ScreenRoutes.Register.SignUp.route, options = NavOptions(
+                        popUpTo = PopUpTo(
+                            ScreenRoutes.Register.SignUp.route
+                        )
+                    )
+                )
+            }
+            Spacer(modifier = Modifier.windowInsetsTopHeight(WindowInsets.navigationBars))
         }
     }
 

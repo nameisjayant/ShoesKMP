@@ -18,7 +18,7 @@ fun ShoesKMPNavigation(
 
     NavHost(
         navigator = navigator,
-        initialRoute = ScreenRoutes.Register.route
+        initialRoute = ScreenRoutes.Start.route
     ) {
 
         group(
@@ -29,7 +29,7 @@ fun ShoesKMPNavigation(
                 SplashScreen(navigator)
             }
             scene(ScreenRoutes.Start.Onboarding.route) {
-                OnBoardingScreen()
+                OnBoardingScreen(navigator)
             }
         }
 
@@ -38,13 +38,13 @@ fun ShoesKMPNavigation(
             initialRoute = ScreenRoutes.Register.Login.route
         ) {
             scene(ScreenRoutes.Register.Login.route) {
-                LoginScreen()
+                LoginScreen(navigator)
             }
             scene(ScreenRoutes.Register.SignUp.route) {
-                SignUpScreen()
+                SignUpScreen(navigator)
             }
             scene(ScreenRoutes.Register.ForgetPassword.route) {
-                ForgetPasswordScreen()
+                ForgetPasswordScreen(navigator)
             }
         }
     }
