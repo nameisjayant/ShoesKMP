@@ -1,4 +1,4 @@
-package features.domain.model
+package features.start.domain.model
 
 data class OnboardingModel(
     val id: Int,

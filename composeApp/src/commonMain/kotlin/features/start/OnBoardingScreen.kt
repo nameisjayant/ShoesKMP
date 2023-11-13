@@ -23,8 +23,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import components.AppButtonComponent
 import components.AppImageComponent
-import features.domain.model.OnboardingModel
-import features.domain.model.onboardList
+import features.start.domain.model.OnboardingModel
+import features.start.domain.model.onboardList
+import utils.backgroundColor
 import utils.lightBlue2Color
 import utils.lightBlueColor
 import utils.lightSubTextColor
@@ -35,21 +36,17 @@ import utils.lightTextColor
 fun OnBoardingScreen() {
 
     Box(
-        modifier = Modifier.background(Color.White)
-            .fillMaxSize()
-            .padding(20.dp)
+        modifier = Modifier.background(backgroundColor).fillMaxSize().padding(20.dp)
     ) {
 
         AppImageComponent(image = "bg_2.png", modifier = Modifier.align(Alignment.TopEnd))
 
         AppImageComponent(
-            image = "bg_1.png",
-            modifier = Modifier.padding(bottom = 200.dp).align(Alignment.Center)
+            image = "bg_1.png", modifier = Modifier.padding(bottom = 200.dp).align(Alignment.Center)
         )
 
         Circle(
-            modifier = Modifier.padding(top = 100.dp, start = 30.dp),
-            color = lightBlue2Color
+            modifier = Modifier.padding(top = 100.dp, start = 30.dp), color = lightBlue2Color
         )
 
         Circle(
@@ -79,12 +76,10 @@ fun OnBoardingScreen() {
 
 @Composable
 fun PagerContent(
-    modifier: Modifier = Modifier,
-    data: OnboardingModel
+    modifier: Modifier = Modifier, data: OnboardingModel
 ) {
     Column(
-        modifier = modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.SpaceBetween
+        modifier = modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween
     ) {
         Box { }
         Box { }
@@ -116,8 +111,7 @@ fun PagerContent(
 
 @Composable
 fun Circle(
-    modifier: Modifier = Modifier,
-    color: Color = lightBlueColor
+    modifier: Modifier = Modifier, color: Color = lightBlueColor
 ) {
     Spacer(modifier = modifier.background(color, CircleShape).size(13.dp))
 }

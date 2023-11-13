@@ -1,5 +1,6 @@
 package features.start
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Text
@@ -14,6 +15,7 @@ import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
 import moe.tlaster.precompose.navigation.Navigator
 import utils.ScreenRoutes
+import utils.backgroundColor
 
 
 @Composable
@@ -26,7 +28,10 @@ fun SplashScreen(
         navigator.navigate(ScreenRoutes.Start.Onboarding.route)
     }
 
-    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+    Box(
+        modifier = Modifier.background(backgroundColor).fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
 
         Text(
             "OXY BOOTS", style = TextStyle(
