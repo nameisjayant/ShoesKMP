@@ -1,4 +1,4 @@
-package features.components
+package features.register.components
 
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement

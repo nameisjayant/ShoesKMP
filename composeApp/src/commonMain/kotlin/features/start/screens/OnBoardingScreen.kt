@@ -1,4 +1,4 @@
-package features.start
+package features.start.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

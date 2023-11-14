@@ -1,4 +1,4 @@
-package features.register
+package features.register.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 import components.AppButtonComponent
 import components.AppTextFieldComponent
 import components.HeaderComponent
-import features.components.TitleSubTitleComponent
+import features.register.components.TitleSubTitleComponent
 import moe.tlaster.precompose.navigation.Navigator
 import utils.backgroundColor
 

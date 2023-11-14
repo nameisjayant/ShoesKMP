@@ -102,7 +102,7 @@ suggest a way to fix them.
 
 ## Want to start with fresh Kotlin-MultiPlatform Project
 
-* [Goto Kotlin MultiPlatform Wizard , it will create a fresh project , download it ,and import it in your android studio, Run in both android and IOS ]("https://kmp.jetbrains.com/?_gl=1*xbev41*_ga*NDMwNjQ1NjU1LjE2ODU0NjU2Mzk.*_ga_9J976DJZ68*MTY5OTg1NTg2My43LjEuMTY5OTg1NTk2OC4xNS4wLjA.&_ga=2.197527980.248806873.1699855864-430645655.1685465639)
+* [Goto Kotlin MultiPlatform Wizard , it will create a fresh project , download it ,and import it in your android studio, Run in both android and IOS ](https://kmp.jetbrains.com/?_gl=1*xbev41*_ga*NDMwNjQ1NjU1LjE2ODU0NjU2Mzk.*_ga_9J976DJZ68*MTY5OTg1NTg2My43LjEuMTY5OTg1NTk2OC4xNS4wLjA.&_ga=2.197527980.248806873.1699855864-430645655.1685465639)
 
 ## Find this project useful ? ❤️
 

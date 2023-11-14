@@ -1,4 +1,4 @@
-package features.register
+package features.register.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -33,8 +33,8 @@ import androidx.compose.ui.unit.sp
 import components.AppButtonComponent
 import components.AppTextFieldComponent
 import components.HeaderComponent
-import features.components.BottomContent
-import features.components.TitleSubTitleComponent
+import features.register.components.BottomContent
+import features.register.components.TitleSubTitleComponent
 import moe.tlaster.precompose.navigation.NavOptions
 import moe.tlaster.precompose.navigation.Navigator
 import moe.tlaster.precompose.navigation.PopUpTo
@@ -116,7 +116,9 @@ fun LoginScreen(
                     })
                 }
                 Spacer(modifier = Modifier.height(30.dp))
-                AppButtonComponent(title = "Sign In", modifier = Modifier.fillMaxWidth()) {}
+                AppButtonComponent(title = "Sign In", modifier = Modifier.fillMaxWidth()) {
+                    navigator.navigate(ScreenRoutes.BottomBar.route)
+                }
             }
             BottomContent(
                 text1 = "Don’t have an account?",
