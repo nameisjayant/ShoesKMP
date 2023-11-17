@@ -1,5 +1,6 @@
 package features.main.bottombar
 
+import CurrentRoute
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -7,7 +8,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -55,10 +55,8 @@ fun BottomBarItems(
     tab: BottomBarRoutes,
     navigator: Navigator
 ) {
-
-
     val contentColor =
-        if (tab.routes == navigator.currentEntry.collectAsState(null).value?.route?.route) lightBlueColor else lightSubTextColor
+        if (tab.routes == CurrentRoute(navigator) || tab.routes == "/bottombar") lightBlueColor else lightSubTextColor
 
     IconButton(onClick = {
         navigator.navigate(tab.routes)

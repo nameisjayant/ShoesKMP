@@ -1,6 +1,8 @@
 package navigation
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -18,6 +20,7 @@ import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.Navigator
 import utils.BottomBarRoutes
 import utils.ScreenRoutes
+import utils.backgroundColor
 
 
 @Composable
@@ -29,7 +32,9 @@ fun ShoesKMPNavigation(
     NavHost(
         navigator = navigator,
         initialRoute = ScreenRoutes.Start.route,
-        modifier = Modifier.padding(innerPadding)
+        modifier = Modifier.background(backgroundColor)
+            .fillMaxSize()
+            .padding(innerPadding)
     ) {
 
         group(
